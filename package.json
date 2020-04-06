@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --watch --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
     "nodemon-webpack-plugin": "^4.3.1",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",

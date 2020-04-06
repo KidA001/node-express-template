@@ -1,8 +1,11 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const config = {
   entry: './src/index.js',
-  mode: 'production',
+  target: 'node',
+  externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -15,7 +18,10 @@ const config = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [
+    new NodemonPlugin()
+  ],
 };
 
 module.exports = config;

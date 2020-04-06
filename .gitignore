@@ -1,0 +1,12 @@
+# Node Dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+
+# vim Swap Files
+*.swp
+
+# System Files
+.DS_Store

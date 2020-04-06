@@ -1,8 +1,10 @@
 # Node Dependencies
 node_modules/
 
+# Webpack artifacts
+dist/*
+
 # Logs
-logs
 *.log
 
 # vim Swap Files

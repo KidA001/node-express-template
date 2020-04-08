@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import express from 'express';
-
-const redisClient = require('./redis');
+import redisClient from './redis';
 
 const app = express();
 const port = 3000;

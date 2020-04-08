@@ -1,0 +1,20 @@
+version: '3'
+services:
+  redis:
+    networks:
+      - backend
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+  app:
+    networks:
+      - backend
+    environment:
+      - REDIS_URL=redis://cache
+      - NODE_ENV=development
+      - PORT=3000
+    links:
+      - redis
+    command:
+      sh -c 'npx webpack --watch --mode=development'

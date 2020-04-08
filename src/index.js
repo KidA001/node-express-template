@@ -1,21 +1,26 @@
 /* eslint-disable no-console */
-import redis from 'redis';
 import express from 'express';
+
+const redisClient = require('./redis');
 
 const app = express();
 const port = 3000;
-
-const redisClient = redis.createClient();
-
-redisClient.on('connect', () => {
-  console.log('Redis client connected');
-  app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
-});
-
-redisClient.on('error', (err) => {
-  console.log(`Redis client error ${err}`);
-});
+const host = '0.0.0.0';
 
 app.get('/', (req, res) => res.send('Hello World!'));
-app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
+
+app.get('/store/:key', async (req, res) => {
+  const { key } = req.params;
+  const value = req.query;
+  await redisClient.setAsync(key, JSON.stringify(value));
+  return res.send('Success');
+});
+
+app.get('/:key', async (req, res) => {
+  const { key } = req.params;
+  const rawData = await redisClient.getAsync(key);
+  return res.json(JSON.parse(rawData));
+});
+
+app.listen(port, () => console.log(`Listening at http://${host}:${port}`));
 // eslint-enable no-console

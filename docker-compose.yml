@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/usr/src/app
+    build: .
+networks:
+  backend:
+    driver: bridge

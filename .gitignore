@@ -12,3 +12,6 @@ dist/*
 
 # System Files
 .DS_Store
+
+# Redis files
+dump.rdb

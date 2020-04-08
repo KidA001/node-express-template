@@ -17,4 +17,4 @@ services:
     links:
       - redis
     command:
-      sh -c 'npm run dev'
+      sh -c 'npm run dev:docker'

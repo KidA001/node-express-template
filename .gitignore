@@ -1,8 +1,10 @@
 # Node Dependencies
 node_modules/
 
+# Webpack artifacts
+dist/*
+
 # Logs
-logs
 *.log
 
 # vim Swap Files
@@ -10,3 +12,6 @@ logs
 
 # System Files
 .DS_Store
+
+# Redis files
+dump.rdb

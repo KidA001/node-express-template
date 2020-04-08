@@ -37,9 +37,9 @@ docker-compose down
 
 ## Testing endpoints
 Once the server is running (in docker or locally), you can do the following to test the endpoints/services
-`curl http://localhost:3000/` - to check if server is running
-`curl http://localhost:3000/store/my-key\?some\=value\&some-other\=otvalue` - to set values in Redis
-`curl curl http://localhost:my-key` to retrieve values from Redis
+- Check if server is running: `curl http://localhost:3000/`
+- Set values in Redis: `curl http://localhost:3000/store/my-key\?some\=value\&some-other\=otvalue`
+- Retrieve values from Redis: `curl curl http://localhost:my-key`
 
 ## Linting
 

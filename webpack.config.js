@@ -8,19 +8,19 @@ const config = {
   externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   plugins: [
-    new NodemonPlugin()
+    new NodemonPlugin(),
   ],
 };
 

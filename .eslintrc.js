@@ -3,7 +3,7 @@ module.exports = {
     "node": true,
     "es2017": true
   },
-  "extends": "eslint:recommended",
+  "extends": "airbnb-base",
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"

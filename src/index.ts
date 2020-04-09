@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import express from 'express';
 import redisClient from './redis';
 
@@ -22,4 +21,3 @@ app.get('/:key', async (req, res) => {
 });
 
 app.listen(port, () => console.log(`Listening at http://${host}:${port}`));
-// eslint-enable no-console

@@ -11,5 +11,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   ignorePatterns: ['dist/', 'node_modules/'],
-  rules: {}
+  rules: {
+    'no-console': 'off', // this rule is usually enabled for client-side js
+  }
 };

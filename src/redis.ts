@@ -1,16 +1,10 @@
-/* eslint-disable no-console */
 import redis from 'redis';
 import { promisify } from 'util';
 
 const client = redis.createClient(process.env.REDIS_URL);
 
-client.on('connect', () => {
-  console.log('Connected to Redis');
-});
-
-client.on('error', (err) => {
-  console.log(`Error Connecting to Redis ${err}`);
-});
+client.on('connect', () => console.log('Connected to Redis'));
+client.on('error', (err) => console.error(`Error Connecting to Redis ${err}`));
 
 export default {
   ...client,
@@ -18,4 +12,3 @@ export default {
   setAsync: promisify(client.set).bind(client),
   keysAsync: promisify(client.keys).bind(client),
 };
-// eslint-enable no-console

@@ -20,4 +20,5 @@ app.get('/:key', async (req, res) => {
   return res.json(JSON.parse(rawData));
 });
 
+// eslint-disable-next-line no-console
 app.listen(port, () => console.log(`Listening at http://${host}:${port}`));

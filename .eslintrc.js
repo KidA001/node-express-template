@@ -12,6 +12,5 @@ module.exports = {
   },
   ignorePatterns: ['dist/', 'node_modules/'],
   rules: {
-    'no-console': 'off', // this rule is usually enabled for client-side js
   }
 };

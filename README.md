@@ -13,26 +13,28 @@ npm i
 ### Local Development
 
 ```sh
-npm run dev:local
+npm run local
 ```
 
 ### Build
 
 ```sh
-npm run build
+npm run build:dev
+npm run build:prod
 ```
 
 ## Docker Instructions
 Make sure you have docker installed on your local machine.
 
-To run the dev environment locally:
+To run one of the docker environments locally:
 ```sh
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+npm run docker:dev
+npm run docker:prod
 ```
 
 To stop the environment:
 ```sh
-docker-compose down
+npm run docker:stop
 ```
 
 ## Testing endpoints

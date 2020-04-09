@@ -6,29 +6,36 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:docker": "webpack --watch --mode=development",
-    "dev:local": "redis-server 2>&1 & webpack --watch --mode=development",
-    "build": "webpack --mode=production",
+    "local": "redis-server 2>&1 & webpack --watch --mode=development",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build",
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.production.yml up --build",
+    "docker:stop": "docker-compose down",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production",
     "start": "node ./dist/bundle.js",
-    "lint": "eslint ./",
-    "lint:fix": "eslint ./ --fix"
+    "lint": "eslint src/**",
+    "lint:fix": "eslint src/** --fix"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "babel-loader": "^8.1.0",
+    "@types/express": "^4.17.5",
+    "@types/node": "^13.11.1",
+    "@types/redis": "^2.8.17",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-airbnb-typescript": "^7.2.0",
     "eslint-plugin-import": "^2.20.2",
     "nodemon-webpack-plugin": "^4.3.1",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "express-pino-logger": "^4.0.0",
     "redis": "^3.0.2"
   }
 }

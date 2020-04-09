@@ -6,9 +6,12 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:docker": "webpack --watch --mode=development",
-    "dev:local": "redis-server 2>&1 & webpack --watch --mode=development",
-    "build": "webpack --mode=production",
+    "local": "redis-server 2>&1 & webpack --watch --mode=development",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build",
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.production.yml up --build",
+    "docker:stop": "docker-compose down",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production",
     "start": "node ./dist/bundle.js",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix"

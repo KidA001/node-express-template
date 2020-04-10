@@ -38,12 +38,13 @@ npm run docker:stop
 ```
 
 ## Testing endpoints
+
 Once the server is running (in docker or locally), you can do the following to test the endpoints/services
 - Check if server is running: `curl http://localhost:3000/`
 - Set values in Redis: `curl http://localhost:3000/store/my-key\?some\=value\&some-other\=otvalue`
 - Retrieve values from Redis: `curl curl http://localhost:my-key`
 
-## Linting
+### Linting
 
 ```sh
 npm run lint
@@ -53,3 +54,14 @@ or
 ```sh
 npm run lint:fix
 ```
+
+### Testing
+
+```sh
+npm test
+```
+
+### Git Hooks
+
+We're using a package called "Husky" to manage git hooks. See the `.huskyrc` for
+more information or to adjust the configuration.

@@ -1,4 +1,5 @@
-# Node Server
+# Node Express Server Template
+This is a templated Node Express server. This can be run locall as a dockerized container or natively through your terminal. For some examples we added a Redis service, controller endpoints, and a unit test. This template is using NodeExpress, Javascript ES7, and TypeScript and a collaboration between [Devin Frenze](https://github.com/DevinFrenze) and [Brian Vogelgesang](https://github.com/KidA001)
 
 ## Non-Docker Instructions
 

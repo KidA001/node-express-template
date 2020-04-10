@@ -45,7 +45,7 @@ npm run docker:stop
 Once the server is running (in docker or locally), you can do the following to test the endpoints/services
 - Check if server is running: `curl http://localhost:3000/`
 - Set values in Redis: `curl http://localhost:3000/store/my-key\?some\=value\&some-other\=otvalue`
-- Retrieve values from Redis: `curl curl http://localhost:my-key`
+- Retrieve values from Redis: `curl http://localhost:my-key`
 
 ### Linting
 

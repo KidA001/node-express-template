@@ -44,6 +44,10 @@ Once the server is running (in docker or locally), you can do the following to t
 - Set values in Redis: `curl http://localhost:3000/store/my-key\?some\=value\&some-other\=otvalue`
 - Retrieve values from Redis: `curl curl http://localhost:my-key`
 
+## Contributing
+
+We're using a package called "Husky" to do linting and testing on git hooks. See the `.huskyrc` for more information or to adjust the configuration.
+
 ### Linting
 
 ```sh
@@ -60,8 +64,3 @@ npm run lint:fix
 ```sh
 npm test
 ```
-
-### Git Hooks
-
-We're using a package called "Husky" to manage git hooks. See the `.huskyrc` for
-more information or to adjust the configuration.
